@@ -1,11 +1,12 @@
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+import * as fs from 'node:fs/promises';
 
-import { readFile } from 'node:fs';
+const filename = fileURLToPath(import.meta.url);
+const dirname = path.dirname(filename);
 
-export const PATH_DB = readFile('./db.json', {encoding: "utf-8"}, (err, data) => {
- if (err){
-    throw err;
- }
- console.log(data);
- return data;
-});
-console.log("hi y");
+export const PATH_DB = path.join(dirname, '../db/db.txt');
+console.log("works");
+
+console.log(fs.readFile(PATH_DB, { encoding: 'utf-8'}));
+

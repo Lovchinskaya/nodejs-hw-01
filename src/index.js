@@ -1,5 +1,5 @@
-import { PATH_DB } from "./constants/contacts";
+import { PATH_DB } from "./constants/contacts.js";
 
-const test = PATH_DB();
+const test = PATH_DB;
 
-console.log(test);
+console.log(`"test" : ${test.data}`);
