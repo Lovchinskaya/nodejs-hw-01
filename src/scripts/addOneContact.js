@@ -9,7 +9,7 @@ export const addOneContact = async () => {
         const addContact = createFakeContact();
         const updateDB = [...contacts, addContact];
         await writeContacts(updateDB);
-        console.log(contacts);
+        // console.log(contacts);
       } catch (error) {
         console.error('Error:', error.message);
       }
